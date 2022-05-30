@@ -13,5 +13,6 @@ namespace Persistence
         {
         }
         public DbSet<Bus> Buses{get;set;}
+        public DbSet<BusLine> BusLines{get;set;}
     }
 }

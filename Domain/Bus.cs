@@ -8,10 +8,10 @@ namespace Domain
     public class Bus
     {
         public Guid Id { get; set; } 
-        public String Fullname { get; set; }
+        public string Fullname { get; set; }
         public int PhoneNum{ get; set; }
         public int BusNum { get; set; }
         public DateTime StartingTime { get; set; }
-        public String Path { get; set; }
+        public string Path { get; set; }
     }
 }

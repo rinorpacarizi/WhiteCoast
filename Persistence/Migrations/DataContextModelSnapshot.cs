@@ -41,6 +41,23 @@ namespace Persistence.Migrations
 
                     b.ToTable("Buses");
                 });
+
+            modelBuilder.Entity("Domain.BusLine", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("End")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Start")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BusLines");
+                });
 #pragma warning restore 612, 618
         }
     }

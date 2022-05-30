@@ -9,8 +9,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220517133443_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220522135547_BusLine")]
+    partial class BusLine
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,23 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Buses");
+                });
+
+            modelBuilder.Entity("Domain.BusLine", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("End")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Start")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BusLines");
                 });
 #pragma warning restore 612, 618
         }
