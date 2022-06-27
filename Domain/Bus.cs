@@ -11,7 +11,5 @@ namespace Domain
         public string Fullname { get; set; }
         public int PhoneNum{ get; set; }
         public int BusNum { get; set; }
-        public DateTime StartingTime { get; set; }
-        public string Path { get; set; }
     }
 }

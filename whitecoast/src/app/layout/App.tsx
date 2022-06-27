@@ -1,14 +1,13 @@
 import React from 'react';
+import BusMainPage from '../../features/Buses/BusMainPage';
 //import './app/layout/syle.css';
-import { BusLines } from './BusLines';
+import NavBar from './NavBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <p>Hello</p>
-       <BusLines></BusLines>
-      </header>
+      <NavBar></NavBar>
+      <BusMainPage></BusMainPage>
     </div>
   );
 }

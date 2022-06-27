@@ -28,14 +28,8 @@ namespace Persistence.Migrations
                     b.Property<string>("Fullname")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Path")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("PhoneNum")
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("StartingTime")
-                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -48,10 +42,19 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Bus")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("End")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("EndTime")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Start")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StartTime")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

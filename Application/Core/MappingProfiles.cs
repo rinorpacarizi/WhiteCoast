@@ -12,6 +12,7 @@ namespace Application.Core
         public MappingProfiles()
         {
             CreateMap<BusLine, BusLine>();
+            CreateMap<Bus,Bus>();
         }
     }
 }
