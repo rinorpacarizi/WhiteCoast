@@ -1,6 +1,10 @@
+import { Match } from './../models/match';
+import { Sport } from './../models/sport';
 import { BusLine } from './../models/busLine';
 import axios, { AxiosResponse } from "axios";
 import { Bus } from '../models/bus';
+import { Team } from '../models/team';
+
 
 
 const sleep = (delay: number) => {
@@ -46,8 +50,32 @@ const Buses = {
   update:(bus: Bus)=>requests.put<void>(`/bus/${bus.id}`,bus),
   delete:(id:string)=> requests.del<void>(`/bus/${id}`)
 };
+const Sports = {
+  list: () => requests.get<Sport[]>("/sport"),
+  details: (id:string)=> requests.get<Sport>(`/sport/${id}`),
+  create:(sport: Sport)=> requests.post<void>('/sport',sport),
+  update:(sport: Sport)=>requests.put<void>(`/sport/${sport.id}`,sport),
+  delete:(id:string)=> requests.del<void>(`/sport/${id}`)
+};
+const Teams = {
+  list: () => requests.get<Team[]>("/team"),
+  details: (id:string)=> requests.get<Team>(`/team/${id}`),
+  create:(team: Team)=> requests.post<void>('/team',team),
+  update:(team: Team)=>requests.put<void>(`/team/${team.id}`,team),
+  delete:(id:string)=> requests.del<void>(`/team/${id}`)
+};
+const Matches = {
+  list: () => requests.get<Match[]>("/match"),
+  details: (id:string)=> requests.get<Match>(`/match/${id}`),
+  create:(match: Match)=> requests.post<void>('/match',match),
+  update:(match: Match)=>requests.put<void>(`/match/${match.id}`,match),
+  delete:(id:string)=> requests.del<void>(`/match/${id}`)
+};
 const agent = {
   BusLines,
-  Buses
+  Buses,
+  Sports,
+  Teams,
+  Matches
 };
 export default agent;

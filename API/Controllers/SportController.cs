@@ -5,42 +5,42 @@ using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
-using Application.Buses;
+using Application.Sports;
 using MediatR;
 
 namespace API.Controllers
 {
-    public class BusController : BaseApiController
+    public class SportController : BaseApiController
     {
 
         [HttpGet]
-        public async Task<ActionResult<List<Bus>>> GetBuses()
+        public async Task<ActionResult<List<Sport>>> GetSports()
         {
             return await Mediator.Send(new List.Query());
         }
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<Bus>> GetBus(Guid id)
+        public async Task<ActionResult<Sport>> GetSports(Guid id)
         {
             return await Mediator.Send(new Details.Query { Id = id });
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateBus(Bus bus)
+        public async Task<IActionResult> CreateSport(Sport sport)
         {
-            return Ok(await Mediator.Send(new Create.Command { Bus = bus }));
+            return Ok(await Mediator.Send(new Create.Command { Sport = sport }));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> EditBus(Guid id, Bus bus)
+        public async Task<IActionResult> EditSport(Guid id, Sport sport)
         {
-            bus.Id = id;
-            return Ok(await Mediator.Send(new Edit.Command { Bus = bus }));
+            sport.Id = id;
+            return Ok(await Mediator.Send(new Edit.Command { Sport = sport }));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBus(Guid id){
+        public async Task<IActionResult> DeleteSport(Guid id){
             return Ok(await Mediator.Send(new Delete.Command{Id=id}));
         }
 

@@ -13,6 +13,9 @@ namespace Application.Core
         {
             CreateMap<BusLine, BusLine>();
             CreateMap<Bus,Bus>();
+            CreateMap<Sport,Sport>();
+            CreateMap<Team,Team>();
+            CreateMap<Match,Match>();
         }
     }
 }

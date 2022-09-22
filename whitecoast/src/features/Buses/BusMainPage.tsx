@@ -106,7 +106,6 @@ export default function BusMainPage(){
         }
       >
         <Modal.Header style={{width:"15rem",position:"relative",left:'12rem'}} >Create  Bus</Modal.Header>
-        <p>here</p>
         <CreateBus  bus={selectedBus} createOrEdit={handleCreateOrEditBus} closeForm={handleCreateFormClose}></CreateBus>
       </Modal>
     </div>
