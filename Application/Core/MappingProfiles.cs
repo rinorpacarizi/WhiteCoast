@@ -16,6 +16,8 @@ namespace Application.Core
             CreateMap<Sport,Sport>();
             CreateMap<Team,Team>();
             CreateMap<Match,Match>();
+            CreateMap<Food,Food>();
+            CreateMap<FoodStaff,FoodStaff>();
         }
     }
 }

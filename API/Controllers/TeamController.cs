@@ -21,7 +21,7 @@ namespace API.Controllers
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<Team>> GetTeams(Guid id)
+        public async Task<ActionResult<Team>> GetTeam(Guid id)
         {
             return await Mediator.Send(new Details.Query { Id = id });
         }

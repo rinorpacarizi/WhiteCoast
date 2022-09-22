@@ -17,5 +17,7 @@ namespace Persistence
         public DbSet<Sport> Sports{get;set;}
         public DbSet<Team> Teams{get;set;}
         public DbSet<Match> Matches{get;set;}
+        public DbSet<Food> Foods{get;set;}
+        public DbSet<FoodStaff> FoodStaffs{get;set;}
     }
 }

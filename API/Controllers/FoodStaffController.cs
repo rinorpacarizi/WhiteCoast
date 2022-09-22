@@ -5,38 +5,38 @@ using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
-using Application.Sports.Matches;
+using Application.FoodStaffs;
 using MediatR;
 
 namespace API.Controllers
 {
-    public class MatchController : BaseApiController
+    public class FoodStaffController : BaseApiController
     {
 
         [HttpGet]
-        public async Task<ActionResult<List<Match>>> GetMatches()
+        public async Task<ActionResult<List<FoodStaff>>> GetStaffs()
         {
             return await Mediator.Send(new List.Query());
         }
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<Match>> GetMatch(Guid id)
+        public async Task<ActionResult<FoodStaff>> GetStaff(Guid id)
         {
             return await Mediator.Send(new Details.Query { Id = id });
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateMatch(Match match)
+        public async Task<IActionResult> CreateStaff(FoodStaff foodstaff)
         {
-            return Ok(await Mediator.Send(new Create.Command { Match = match }));
+            return Ok(await Mediator.Send(new Create.Command { FoodStaff = foodstaff }));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> EditMatch(Guid id, Match match)
+        public async Task<IActionResult> EditMatch(Guid id, FoodStaff foodstaff)
         {
-            match.Id = id;
-            return Ok(await Mediator.Send(new Edit.Command { Match = match }));
+            foodstaff.Id = id;
+            return Ok(await Mediator.Send(new Edit.Command { FoodStaff = foodstaff }));
         }
 
         [HttpDelete("{id}")]

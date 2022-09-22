@@ -1,3 +1,5 @@
+import { FoodStaff } from './../models/foodStaff';
+import { Food } from './../models/food';
 import { Match } from './../models/match';
 import { Sport } from './../models/sport';
 import { BusLine } from './../models/busLine';
@@ -71,11 +73,27 @@ const Matches = {
   update:(match: Match)=>requests.put<void>(`/match/${match.id}`,match),
   delete:(id:string)=> requests.del<void>(`/match/${id}`)
 };
+const FoodStaffs = {
+  list: () => requests.get<FoodStaff[]>("/foodstaff"),
+  details: (id:string)=> requests.get<FoodStaff>(`/foodstaff/${id}`),
+  create:(foodstaff: FoodStaff)=> requests.post<void>('/foodstaff',foodstaff),
+  update:(foodstaff: FoodStaff)=>requests.put<void>(`/foodstaff/${foodstaff.id}`,foodstaff),
+  delete:(id:string)=> requests.del<void>(`/foodstaff/${id}`)
+};
+const Foods = {
+  list: () => requests.get<Food[]>("/food"),
+  details: (id:string)=> requests.get<Food>(`/food/${id}`),
+  create:(food: Food)=> requests.post<void>('/food',food),
+  update:(food: Food)=>requests.put<void>(`/food/${food.id}`,food),
+  delete:(id:string)=> requests.del<void>(`/food/${id}`)
+};
 const agent = {
   BusLines,
   Buses,
   Sports,
   Teams,
-  Matches
+  Matches,
+  Foods,
+  FoodStaffs
 };
 export default agent;
