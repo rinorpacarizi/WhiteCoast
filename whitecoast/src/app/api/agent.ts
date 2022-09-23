@@ -6,6 +6,7 @@ import { BusLine } from './../models/busLine';
 import axios, { AxiosResponse } from "axios";
 import { Bus } from '../models/bus';
 import { Team } from '../models/team';
+import { Mission } from '../models/mission';
 
 
 
@@ -87,6 +88,13 @@ const Foods = {
   update:(food: Food)=>requests.put<void>(`/food/${food.id}`,food),
   delete:(id:string)=> requests.del<void>(`/food/${id}`)
 };
+const Missions = {
+  list: () => requests.get<Mission[]>("/mission"),
+  details: (id:string)=> requests.get<Mission>(`/mission/${id}`),
+  create:(mission: Mission)=> requests.post<void>('/mission',mission),
+  update:(mission: Mission)=>requests.put<void>(`/mission/${mission.id}`,mission),
+  delete:(id:string)=> requests.del<void>(`/mission/${id}`)
+};
 const agent = {
   BusLines,
   Buses,
@@ -94,6 +102,7 @@ const agent = {
   Teams,
   Matches,
   Foods,
-  FoodStaffs
+  FoodStaffs,
+  Missions,
 };
 export default agent;

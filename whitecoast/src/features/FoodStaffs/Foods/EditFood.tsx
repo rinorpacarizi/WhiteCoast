@@ -36,7 +36,7 @@ export default function EditFood({food:selectedFood,createOrEdit,cancelSelectFoo
         <Form onSubmit={handleSubmit} autoComplete='off'  style={{width:"25rem",position:"relative",left:'6rem'}}>
             <Form.Input value={food.name} name='name' onChange={handleInputChange} />
             <Form.Input value={food.size} name='size' onChange={handleInputChange}  />
-            <Form.Input value={food.time} name='time' onChange={handleInputChange}  />
+            <Form.Input type="time" value={food.time} name='time' onChange={handleInputChange}  />
             <Form.Input value={food.cheff} name='cheff' onChange={handleInputChange}  />
             <Button floated="right" positive type="submit" content="Edit"/>
             <Button onClick={editFood} floated="left" type="submit" content="Cancel"/>

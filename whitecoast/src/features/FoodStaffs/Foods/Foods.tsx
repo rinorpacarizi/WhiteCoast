@@ -26,7 +26,7 @@ export default function Foods({
 }: Props) {
   return (
     <div>
-      <h1 style={{ marginLeft: "15rem" }}>Lines</h1>
+      <h1 style={{ marginLeft: "15rem" }}>Food</h1>
       <ListFood
         foods={foods}
         selectedFood={selectedFood}
