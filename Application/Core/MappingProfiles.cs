@@ -19,6 +19,8 @@ namespace Application.Core
             CreateMap<Food,Food>();
             CreateMap<FoodStaff,FoodStaff>();
             CreateMap<Mission,Mission>();
+            CreateMap<Exercise,Exercise>();
+            CreateMap<Lecture,Lecture>();
         }
     }
 }

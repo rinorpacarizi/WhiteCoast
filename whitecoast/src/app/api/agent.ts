@@ -1,3 +1,5 @@
+import { Lecture } from './../models/lecture';
+import { Exercise } from './../models/exercise';
 import { FoodStaff } from './../models/foodStaff';
 import { Food } from './../models/food';
 import { Match } from './../models/match';
@@ -95,6 +97,20 @@ const Missions = {
   update:(mission: Mission)=>requests.put<void>(`/mission/${mission.id}`,mission),
   delete:(id:string)=> requests.del<void>(`/mission/${id}`)
 };
+const Exercises = {
+  list: () => requests.get<Exercise[]>("/exercise"),
+  details: (id:string)=> requests.get<Exercise>(`/exercise/${id}`),
+  create:(exercise: Exercise)=> requests.post<void>('/exercise',exercise),
+  update:(exercise: Exercise)=>requests.put<void>(`/exercise/${exercise.id}`,exercise),
+  delete:(id:string)=> requests.del<void>(`/exercise/${id}`)
+};
+const Lectures = {
+  list: () => requests.get<Lecture[]>("/lecture"),
+  details: (id:string)=> requests.get<Lecture>(`/lecture/${id}`),
+  create:(lecture: Lecture)=> requests.post<void>('/lecture',lecture),
+  update:(lecture: Lecture)=>requests.put<void>(`/lecture/${lecture.id}`,lecture),
+  delete:(id:string)=> requests.del<void>(`/lecture/${id}`)
+};
 const agent = {
   BusLines,
   Buses,
@@ -104,5 +120,7 @@ const agent = {
   Foods,
   FoodStaffs,
   Missions,
+  Exercises,
+  Lectures
 };
 export default agent;

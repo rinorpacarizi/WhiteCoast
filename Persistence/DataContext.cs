@@ -20,5 +20,7 @@ namespace Persistence
         public DbSet<Food> Foods{get;set;}
         public DbSet<FoodStaff> FoodStaffs{get;set;}
         public DbSet<Mission> Missions{get;set;}
+        public DbSet<Exercise> Exercises{get;set;}
+        public DbSet<Lecture> Lectures{get;set;}
     }
 }
