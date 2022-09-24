@@ -96,20 +96,18 @@ export default function TeamPage() {
         open={openCreate}
         size="tiny"
         trigger={
-          <Button
+          <Button className="addBtn"
             circular
             color="black"
             floated="right"
             fixed="right"
             style={{
-              width: "80px",
-              height: "38px",
+              width: "55px",
+              height: "55px",
               position: "relative",
-              bottom: "33em",
-              right: "24rem",
-              fontSize: "10px",
+              fontSize: "15px",
             }}
-            content="Add a Team"
+            content="+"
           ></Button>
         }
       >

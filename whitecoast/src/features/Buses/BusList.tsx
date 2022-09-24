@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useState } from "react";
 import { Segment, Item, Button, Modal } from "semantic-ui-react";
 import { Bus } from "../../app/models/bus";
 import EditBus from "./EditBus";
-
+import "./style.css"
 interface Props {
   buses: Bus[];
   selectedBus: Bus | undefined;
@@ -31,22 +31,25 @@ export default function BusList({
     deleteBus(id);
   }
   return (
-    <div>
-      <Segment>
-        <Item.Group divided>
+    <div className="div1">
+      <Segment >
+        <Item.Group divided style={{margin:"10px"}}>
           {buses.map((bus) => (
             <Item key={bus.id}>
-              <Item.Content>
+              <Item.Content >
+                <h4 style={{marginTop:"20px"}}>Bus Number</h4>
                 <Item.Header as="a">{bus.busNum}</Item.Header>
+                <h4>Bus Name</h4>
                 <Item.Meta>{bus.fullname}</Item.Meta>
+                <h4>Phone Number</h4>
                 <Item.Meta>{bus.phoneNum}</Item.Meta>
                 <Item.Extra>
-                  <Button
+                  <Button 
                     loading={target === bus.id}
                     name={bus.id}
                     onClick={(e) => handleBusDelete(e, bus.id)}
                     floated="right"
-                    content="delete"
+                    content="Delete"
                     color="red"
                   />
 
@@ -58,7 +61,7 @@ export default function BusList({
                       <Button
                         onClick={() => selectBus(bus.id)}
                         floated="right"
-                        content="edit"
+                        content="Edit"
                         color="blue"
                       />
                     }

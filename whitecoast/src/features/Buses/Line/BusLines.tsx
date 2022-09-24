@@ -26,7 +26,7 @@ export default function BusLines({
 }: Props) {
   return (
     <div>
-      <h1 style={{ marginLeft: "15rem" }}>Lines</h1>
+      <h1 style={{ marginLeft: "2rem" }}>Lines</h1>
       <LineList
         busLines={busLines}
         selectedLine={selectedLine}

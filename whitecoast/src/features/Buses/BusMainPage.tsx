@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
 import { Bus } from "../../app/models/bus";
-import { Button, Icon, Modal } from "semantic-ui-react";
+import { Button, Container, Icon, Menu, Modal } from "semantic-ui-react";
 import Buses from "./Buses";
 import CreateBus from "./CreateBus";
 import BusPage from "./Line/BusPage";
 import agent from "../../app/api/agent";
-
+import "./style.css"
 export default function BusMainPage(){
     const[buses,setBuses]=useState<Bus[]>([]);
     const [openCreate, setOpenCreate] =useState(false);
@@ -70,9 +70,34 @@ export default function BusMainPage(){
   }
     return(
         <div>
-      <div style={{ marginLeft: "15rem", marginRight: "12rem",width:"35rem", position:'relative',top:"5rem"}}>
-        
-        <Buses
+          
+      <div >
+      <h1 className="h1b" id="h1">Orari dhe Linjat</h1>
+      <Container style={{ marginTop: "5rem",display:"flex", flexDirection:"column",justifyContent:"left",marginRight: "12rem" }}>
+        <Menu.Item style={{ display: "flex",marginBottom:"55px",marginLeft: "10rem"  }}>
+          <Icon size="big" name="bus" />
+          <h3>Linja 1</h3>
+        </Menu.Item>
+        <Menu.Item style={{ display: "flex" ,marginBottom:"55px",marginLeft: "10rem"}}>
+          <Icon size="big" name="bus" />
+          <h3>Linja 1</h3>
+        </Menu.Item>
+        <Menu.Item style={{ display: "flex",marginBottom:"55px" ,marginLeft: "10rem"}}>
+          <Icon size="big" name="bus" />
+          <h3>Linja 1</h3>
+        </Menu.Item>
+        <Menu.Item style={{ display: "flex",marginBottom:"55px" ,marginLeft: "10rem"}}>
+          <Icon size="big" name="bus" />
+          <h3>Linja 1</h3>
+        </Menu.Item>
+        <Menu.Item style={{ display: "flex",marginBottom:"55px",marginLeft: "10rem" }}>
+          <Icon size="big" name="bus" />
+          <h3>Linja 1</h3>
+        </Menu.Item>
+      </Container>
+      
+       <div style={{ marginLeft: "45rem",width:"35rem", position:'relative',bottom:"30rem"}}>
+       <Buses 
           buses={buses}
           selectedBus={selectedBus}
           selectBus={handleSelectBus}
@@ -83,31 +108,32 @@ export default function BusMainPage(){
           editForm={handleEditFormClose}
           // submitting={submitting}
         ></Buses>
-        <div style={{width:"65rem",position:'relative',bottom:"14rem",left:'25rem'}}>
+       </div>
+        {/* <div style={{width:"65rem",position:'relative',bottom:"14rem",left:'25rem'}}>
 
         <BusPage ></BusPage>
-        </div>
-      </div>
+        </div> */}
 
-     
+        </div>
       <Modal 
        onClose={() => setOpenCreate(false)}
         onOpen={() => setOpenCreate(true)}
         open={openCreate}
         size="tiny"
         trigger={
-          <Button
+          <Button className="busButton"
             circular
             color="black"
             floated="right"
             fixed="right"
-            style={{ width: "80px", height: "38px",position:'relative',bottom:'45em',right:'32rem', fontSize:"10px"}}
-            content="Add a Bus"></Button>
+            style={{ width: "55px", height: "55px",position:'relative',bottom:'38em',right:'15rem', fontSize:"16px"}}
+            content="+"></Button>
         }
       >
         <Modal.Header style={{width:"15rem",position:"relative",left:'12rem'}} >Create  Bus</Modal.Header>
         <CreateBus  bus={selectedBus} createOrEdit={handleCreateOrEditBus} closeForm={handleCreateFormClose}></CreateBus>
       </Modal>
     </div>
+    
     );
 }

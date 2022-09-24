@@ -25,8 +25,8 @@ export default function Teams({
   editForm
 }: Props) {
   return (
-    <div>
-      <h1 style={{ marginLeft: "15rem" }}>Teams</h1>
+    <div className="teamsBox">
+      <h1 style={{ marginRight: "10rem" }}>Ekipet</h1>
       <ListTeams
         teams={teams}
         selectedTeam={selectedTeam}

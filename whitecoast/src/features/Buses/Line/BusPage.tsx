@@ -102,14 +102,14 @@ export default function BusPage() {
             floated="right"
             fixed="right"
             style={{
-              width: "80px",
-              height: "38px",
+              width: "55px",
+              height: "55px",
               position: "relative",
-              bottom: "33em",
-              right: "24rem",
-              fontSize: "10px",
+              bottom: "10.5em",
+              right: "15rem",
+              fontSize: "16px",
             }}
-            content="Add a Line"
+            content="+"
           ></Button>
         }
       >

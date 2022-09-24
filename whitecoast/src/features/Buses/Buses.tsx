@@ -29,7 +29,7 @@ export default function Buses({
   
   return (
     <div>
-      <h1 style={{marginLeft:'15rem'}}>Buses</h1>
+      <h2 style={{marginLeft:'1.2rem'}}>Buses</h2>
 
       <BusList
         buses={buses}

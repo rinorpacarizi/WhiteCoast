@@ -36,7 +36,7 @@ Props) {
     deleteBusLine(id);
   }
   return (
-    <div>
+    <div className="div1">
       <Segment>
         <Item.Group divided>
           {busLines.map((busLine) => (

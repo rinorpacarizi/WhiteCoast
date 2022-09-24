@@ -2,6 +2,7 @@ import { SyntheticEvent, useState } from "react";
 import { Segment, Item, Button, Modal } from "semantic-ui-react";
 import { Team } from "../../../app/models/team";
 import EditTeam from "./EditTeam";
+import "../../Buses/style.css"
 
 interface Props {
   teams: Team[];
@@ -36,20 +37,20 @@ Props) {
     deleteTeam(id);
   }
   return (
-    <div>
+    <div className="teamBox">
       <Segment>
         <Item.Group divided>
           {teams.map((team) => (
             <Item key={team.id}>
-              <Item.Content>
+              <Item.Content className="sportItem">
                 <Item.Header as="a">
                   {team.name}
-                </Item.Header>
-                <Item.Meta>{team.sport}</Item.Meta>
-                <Item.Meta>Total Space:{team.totalSpace}</Item.Meta>
-                <Item.Meta>Free Space:{team.freeSpace}</Item.Meta>
+                </Item.Header >
+                <Item.Meta className="sportMeta">{team.sport}</Item.Meta>
+                <Item.Meta className="sportMeta">Total Space:{team.totalSpace}</Item.Meta>
+                <Item.Meta className="sportMeta">Free Space:{team.freeSpace}</Item.Meta>
                 <Item.Extra>
-                  <Button
+                  <Button className="sportsBtn"
                     loading={target === team.id}
                     name={team.id}
                     onClick={(e) => handleTeamDelete(e, team.id)}
@@ -63,7 +64,7 @@ Props) {
                     open={openEdit}
                     size="tiny"
                     trigger={
-                      <Button
+                      <Button className="sportsBtn"
                         onClick={() => selectTeam(team.id)}
                         floated="right"
                         content="edit"
