@@ -8,6 +8,7 @@ import agent from "../../app/api/agent";
 import TeamPage from "./Teams/TeamPage";
 import MatchPage from "./Teams/Matches/MatchPage";
 import "../Buses/style.css";
+import {NavLink} from 'react-router-dom'
 
 export default function SportsMainPage() {
   const [sports, setSports] = useState<Sport[]>([]);
@@ -72,8 +73,9 @@ export default function SportsMainPage() {
   return (
     <div>
       <div className="title">
-        <h1 id="ekipet">Ekipet</h1>
-        <h1 id="terminet">Terminet</h1>
+        <Button as={NavLink} to='/team'>Ekipet</Button>
+        <Button as={NavLink} to='/match'>Terminet</Button>
+        
       </div>
       <Divider />
       <div className="buttons">
@@ -92,7 +94,7 @@ export default function SportsMainPage() {
             top: "5rem",
           }}
         >
-          {/* <Sports
+           <Sports
             sports={sports}
             selectedSport={selectedSport}
             selectSport={handleSelectSport}
@@ -102,7 +104,7 @@ export default function SportsMainPage() {
             openEdit={openEdit}
             editForm={handleEditFormClose}
             // submitting={submitting}
-          ></Sports> */}
+          ></Sports> 
           <div
             style={{
               width: "65rem",
@@ -111,13 +113,8 @@ export default function SportsMainPage() {
               left: "15rem",
             }}
           >
-            <TeamPage></TeamPage>
           </div>
 
-          {/* <div style={{width:"65rem",position:'relative',bottom:"14rem",left:'40rem'}}>
-
-        <MatchPage ></MatchPage>
-        </div> */}
         </div>
       </div>
 

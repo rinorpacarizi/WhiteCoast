@@ -23,8 +23,6 @@ export default function MatchPage() {
     agent.Matches.list().then((response) => {
       let matches: Match[] = [];
       response.forEach((match) => {
-       // busline.startTime = busline.startTime.split("T")[0];
-       // busline.endTime = busline.endTime.split("T")[0];
        matches.push(match);
       });
       setMatches(matches);
